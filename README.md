@@ -26,7 +26,7 @@ Performance across vairous model is summarized below. The eXtreme Gradient Boost
 
 From the businees point of view, what is more critical is that the top factors we can extract from our trained model? If we list all features by their feature importance, The top five predictive features are TotalDayMinutes, TotalEveMinutes, TotalIntlMinutes, CustomerServiceCalls and TotalNightMinutes. Four out of them are related to the call usage. Conclusively, we may suggest that the company may provide a discount plan for heavy users and investigate the customer service call quality.
 
-![screenshot](/Users/chiahuilin/work/project/Churn_prediction/misc/screenshot.png)
+![screenshot](./misc/screenshot.png)
 
 
 
