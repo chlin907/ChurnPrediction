@@ -40,7 +40,7 @@ Below we list all features by their feature importance from XGBOOST model. Let's
 
 From CustomerServiceCalls feature, we notice that when a user make more than four service calls, they tend to be churned. This may be related to the customer service quality and trouble-shooting capability. It's also suggested that the company can collect some survey on the customer service quality and feedback.
 
-![screenshot](/Users/chiahuilin/work/project/Churn_prediction/misc/screenshot.png)
+![screenshot](./misc/screenshot.png)
 
 
 
