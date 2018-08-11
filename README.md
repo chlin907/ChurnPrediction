@@ -6,8 +6,6 @@
 
 In this project, we use supervised learning models to identify customers who are likely to stop using telecommunication service in the future. Furthermore, we will analyze top factors that influence user retention from model itself. The dataset source can be found in [Kaggle](https://www.kaggle.com/pangkw/telco-churn/home).
 
- .
-
 ## Background
 
 Churn prediction has been a classical problem in machine learning applications. We can learn that machine learning can be linked to business goal and help human beings in data-driven decision making. And the learning here can be transferable to any subscription problems beyond telecommunication field.
@@ -29,8 +27,6 @@ Performance across various model is summarized below. The eXtreme Gradient Boost
 | SVM                         | 0.916       | 0.837     | 0.530  | 0.649    |
 | XGBOOST                     | 0.947       | 0.885     | 0.735  | 0.803    |
 | XGBOOST optimized           | 0.956       | 0.933     | 0.752  | 0.833    |
-
-
 
 ## What else does a predictive model tell us?
 
