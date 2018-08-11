@@ -4,27 +4,41 @@
 
 # Telecommunication Churn Prediction
 
-In this project, we use supervised learning models to identify customers who are likely to stop using telecommunication service in the future. Furthermore, we will analyze top factors that influence user retention from model itself. The dataset source is <https://www.kaggle.com/pangkw/telco-churn/home>
+In this project, we use supervised learning models to identify customers who are likely to stop using telecommunication service in the future. Furthermore, we will analyze top factors that influence user retention from model itself. The dataset source can be found in [Kaggle](https://www.kaggle.com/pangkw/telco-churn/home).
+
+ .
+
+## Background
+
+Churn prediction has been a classical problem in machine learning applications. We can learn that machine learning can be linked to business goal and help human beings in data-driven decision making. And the learning here can be transferable to any subscription problems beyond telecommunication field.
+
+## Method
+
+After scrutinizing the dataset, this is a binary classification problem with imbalanced labels (Churned << Not churned). Features contain three major types: numeric, binary and text data. We can perform simple data cleaning and one-hot encoding to obtain a feature matrix. We will evaluate few typical models to understand the baseline predictability of this task and try to understand the hint behind modeling.
 
 ## Model Performance
 
-Performance across vairous model is summarized below. The eXtreme Gradient Boosting (XGBOOST) obvisouly outperform others in every aspect. 
+Performance across various model is summarized below. The eXtreme Gradient Boosting (XGBOOST)  obviously outperform others in every aspect. Further optimization on the hyper-parameter tuning can bring us about 1% in accuracy and more one other metrics.
 
-| Model Name                  | CV Accuracy | Precision | Recall   | F1 score |
-| --------------------------- | ----------- | --------- | -------- | -------- |
-| Logistic regression with L1 | 0.893029    | 0.690691  | 0.476190 | 0.563725 |
-| Logistic regression with L2 | 0.893029    | 0.686217  | 0.484472 | 0.567961 |
-| Random forest               | 0.913161    | 0.854015  | 0.484472 | 0.618230 |
-| KNN                         | 0.893029    | 0.757085  | 0.387164 | 0.512329 |
-| SVM                         | 0.916767    | 0.836601  | 0.530021 | 0.648923 |
-| XGBOOST                     | 0.947716    | 0.885287  | 0.734990 | 0.803167 |
-| XGBOOST optimized           | 0.956130    | 0.933162  | 0.751553 | 0.832569 |
+| Model Name                  | CV Accuracy | Precision | Recall | F1 score |
+| --------------------------- | ----------- | --------- | ------ | -------- |
+| Logistic regression with L1 | 0.893       | 0.691     | 0.476  | 0.564    |
+| Logistic regression with L2 | 0.893       | 0.686     | 0.484  | 0.570    |
+| Random forest               | 0.913       | 0.854     | 0.484  | 0.618    |
+| KNN                         | 0.893       | 0.757     | 0.387  | 0.512    |
+| SVM                         | 0.916       | 0.837     | 0.530  | 0.649    |
+| XGBOOST                     | 0.947       | 0.885     | 0.735  | 0.803    |
+| XGBOOST optimized           | 0.956       | 0.933     | 0.752  | 0.833    |
 
 
 
 ## What else does a predictive model tell us?
 
-From the businees point of view, what is more critical is that the top factors we can extract from our trained model? If we list all features by their feature importance, The top five predictive features are TotalDayMinutes, TotalEveMinutes, TotalIntlMinutes, CustomerServiceCalls and TotalNightMinutes. Four out of them are related to the call usage. Conclusively, we may suggest that the company may provide a discount plan for heavy users and investigate the customer service call quality.
+From the business point of view, what is more critical is that the top factors we can extract from our trained model? Most models can provide sort of internal metrics to represent the importance of each features. The more important a feature is, the more correlation this feature has to customer's churn decision (positive or negative correlation). 
+
+Below we list all features by their feature importance from XGBOOST model. Let's focus on the top five predictive features: TotalDayMinutes, TotalEveMinutes, TotalIntlMinutes, CustomerServiceCalls and TotalNightMinutes. It is clear that four out of five are related to the call usage. We can infer that heavy service users may tend to look for better deal plans from competitors. The company may provide a better package to those targeted users from our prediction in order to reduce churn rate. From 
+
+From CustomerServiceCalls feature, we notice that when a user make more than four service calls, they tend to be churned. This may be related to the customer service quality and trouble-shooting capability. It's also suggested that the company can collect some survey on the customer service quality and feedback.
 
 ![screenshot](/Users/chiahuilin/work/project/Churn_prediction/misc/screenshot.png)
 
